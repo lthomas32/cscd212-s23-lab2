@@ -45,13 +45,7 @@ public class Television implements Comparable<Television> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Television that)) return false;
-
-        if (fourk != that.fourk) return false;
-        if (resolution != that.resolution) return false;
-        if (screenSize != that.screenSize) return false;
-        if (smart != that.smart) return false;
-        if (!Objects.equals(make, that.make)) return false;
-        return Objects.equals(model, that.model);
+        return fourk == that.fourk && resolution == that.resolution && screenSize == that.screenSize && smart == that.smart && Objects.equals(make, that.make) && Objects.equals(model, that.model);
     }
 
     @Override
