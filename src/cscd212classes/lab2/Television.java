@@ -26,26 +26,26 @@ public class Television implements Comparable<Television> {
     }
 
     public String getMake() {
-        return make;
+        return this.make;
     }
 
     public String getModel() {
-        return model;
+        return this.model;
     }
 
     public int getResolution() {
-        return resolution;
+        return this.resolution;
     }
 
     public int getScreenSize() {
-        return screenSize;
+        return this.screenSize;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Television that)) return false;
-        return fourK == that.fourK && resolution == that.resolution && screenSize == that.screenSize && smart == that.smart && Objects.equals(make, that.make) && Objects.equals(model, that.model);
+        return this.fourK == that.fourK && this.resolution == that.resolution && this.screenSize == that.screenSize && this.smart == that.smart && Objects.equals(this.make, that.make) && Objects.equals(this.model, that.model);
     }
 
     @Override
@@ -55,11 +55,11 @@ public class Television implements Comparable<Television> {
 
     @Override
     public String toString() {
-        return this.make + "-" + this.model + ", " + this.screenSize + " inch " + (smart ? "smart ":"") + "tv with " + (fourK ? "4K": this.resolution) + " resolution";
+        return this.make + "-" + this.model + ", " + this.screenSize + " inch " + (this.smart ? "smart ": "") + "tv with " + (this.fourK ? "4K": this.resolution) + " resolution";
     }
 
     @Override
-    public int compareTo(Television o) {
+    public int compareTo(final Television o) {
         if (o == null)
             throw new IllegalArgumentException("null parameter in the compareTo method");
 
