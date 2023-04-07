@@ -3,7 +3,7 @@ package cscd212classes.lab2;
 import java.util.Objects;
 
 public class Television implements Comparable<Television> {
-    private final boolean fourk;
+    private final boolean fourK;
     private final String make;
     private final String model;
     private final int resolution;
@@ -18,7 +18,7 @@ public class Television implements Comparable<Television> {
         this.resolution = resolution;
         this.screenSize = screenSize;
         this.smart = smart;
-        this.fourk = resolution == 2160;
+        this.fourK = resolution == 2160;
     }
 
     public Television(final String make, final String model, final boolean smart, final int screenSize, final int resolution){
@@ -45,17 +45,17 @@ public class Television implements Comparable<Television> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Television that)) return false;
-        return fourk == that.fourk && resolution == that.resolution && screenSize == that.screenSize && smart == that.smart && Objects.equals(make, that.make) && Objects.equals(model, that.model);
+        return fourK == that.fourK && resolution == that.resolution && screenSize == that.screenSize && smart == that.smart && Objects.equals(make, that.make) && Objects.equals(model, that.model);
     }
 
     @Override
     public int hashCode() {
-        return this.make.hashCode() + Boolean.hashCode(this.fourk) + this.model.hashCode() + this.resolution +Boolean.hashCode(this.smart);
+        return this.make.hashCode() + Boolean.hashCode(this.fourK) + this.model.hashCode() + this.resolution +Boolean.hashCode(this.smart);
     }
 
     @Override
     public String toString() {
-        return this.make + "-" + this.model + ", " + this.screenSize + " inch " + (smart ? "smart ":"") + "tv with " + (fourk ? "4K": this.resolution) + " resolution";
+        return this.make + "-" + this.model + ", " + this.screenSize + " inch " + (smart ? "smart ":"") + "tv with " + (fourK ? "4K": this.resolution) + " resolution";
     }
 
     @Override
